@@ -1,0 +1,9 @@
+lun:
+  client:
+    host: https://misto.lun.ua
+    endpoint: /api/v1/informers/now
+
+telegram:
+  client:
+    host: https://api.telegram.org
+    endpoint: /bot{token}/sendPhoto?chat_id={id}&disable_notification=true
