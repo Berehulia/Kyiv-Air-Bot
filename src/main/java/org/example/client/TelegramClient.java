@@ -16,10 +16,10 @@ import static io.micronaut.http.MediaType.MULTIPART_FORM_DATA;
 
 @Validated
 @Client("${telegram.client.host}")
-public interface TelegramRxClient {
+public interface TelegramClient {
 
   @Post(value = "${telegram.client.endpoint}", produces = MULTIPART_FORM_DATA)
-  Single<TelegramResponse> sendMessage(
+  TelegramResponse sendMessage(
       @NotBlank @PathVariable String token,
       @NotBlank @PathVariable String id,
       @NotNull @Body MultipartBody body

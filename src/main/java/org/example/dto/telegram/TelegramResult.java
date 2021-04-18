@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.micronaut.core.annotation.Introspected;
+import lombok.Getter;
 import lombok.ToString;
 import org.example.util.UnixTimestampDeserializer;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Getter
 @ToString
 @Introspected
 public class TelegramResult {

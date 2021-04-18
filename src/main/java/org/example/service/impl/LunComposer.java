@@ -8,6 +8,7 @@ import org.example.service.MessageComposer;
 
 import javax.inject.Singleton;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Formatter;
@@ -19,10 +20,12 @@ public class LunComposer implements MessageComposer {
   public static final String PARAMETER_PHOTO = "photo";
 
   @Override
-  public MultipartBody composeBody(@Valid LunAir air) {
+  public MultipartBody composeBody(@NotNull @Valid LunAir air) {
+    String caption = createCaption(air);
+    File photo = choosePhoto(air);
     return MultipartBody.builder()
-        .addPart(PARAMETER_CAPTION, createCaption(air))
-        .addPart(PARAMETER_PHOTO, chooseImage(air))
+        .addPart(PARAMETER_CAPTION, caption)
+        .addPart(PARAMETER_PHOTO, photo)
         .build();
   }
 
@@ -40,7 +43,7 @@ public class LunComposer implements MessageComposer {
     return builder.toString();
   }
 
-  private File chooseImage(LunAir air) {
+  private File choosePhoto(LunAir air) {
     int index = air.getIndex();
     switch (Range.of(index)) {
       case RANGE_0_50: return new File("img/0-range-0-50.jpg");
