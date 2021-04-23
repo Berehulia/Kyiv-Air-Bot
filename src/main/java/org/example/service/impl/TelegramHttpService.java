@@ -1,8 +1,8 @@
 package org.example.service.impl;
 
 import io.micronaut.context.annotation.Value;
+import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.client.multipart.MultipartBody;
-import lombok.extern.slf4j.Slf4j;
 import org.example.client.TelegramClient;
 import org.example.dto.lun.LunAir;
 import org.example.dto.telegram.TelegramResponse;
@@ -13,8 +13,8 @@ import javax.inject.Singleton;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Slf4j
 @Singleton
+@Introspected
 public class TelegramHttpService implements TelegramService {
 
   @Inject

@@ -1,5 +1,6 @@
 package org.example.service.impl;
 
+import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.client.multipart.MultipartBody;
 import lombok.AllArgsConstructor;
 import org.example.dto.lun.LunAir;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import java.util.Formatter;
 
 @Singleton
+@Introspected
 public class LunComposer implements MessageComposer {
 
   public static final String PARAMETER_CAPTION = "caption";

@@ -1,5 +1,6 @@
 package org.example.client;
 
+import io.micronaut.core.annotation.Introspected;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.annotation.Post;
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotNull;
 import static io.micronaut.http.MediaType.MULTIPART_FORM_DATA;
 
 @Validated
+@Introspected
 @Client("${telegram.client.host}")
 public interface TelegramClient {
 

@@ -16,6 +16,7 @@
   <properties>
     <jdk.version>1.8</jdk.version>
     <micronaut.version>2.4.2</micronaut.version>
+    <exec.mainClass>org.example.KyivAirRuntime</exec.mainClass>
   </properties>
 
   <dependencies>
@@ -45,7 +46,12 @@
     <!-- Micronaut AWS -->
     <dependency>
       <groupId>io.micronaut.aws</groupId>
-      <artifactId>micronaut-function-aws</artifactId>
+      <artifactId>micronaut-function-aws-api-proxy</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.aws</groupId>
+      <artifactId>micronaut-function-aws-custom-runtime</artifactId>
       <scope>compile</scope>
     </dependency>
 
@@ -92,6 +98,11 @@
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
               <version>${lombok.version}</version>
+            </path>
+            <path>
+              <groupId>io.micronaut</groupId>
+              <artifactId>micronaut-graal</artifactId>
+              <version>${micronaut.version}</version>
             </path>
             <path>
               <groupId>io.micronaut</groupId>

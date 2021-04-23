@@ -1,3 +1,7 @@
+micronaut:
+  application:
+    name: KyivAirBot
+
 lun:
   client:
     host: https://misto.lun.ua

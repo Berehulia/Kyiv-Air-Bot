@@ -1,6 +1,6 @@
 package org.example.service.impl;
 
-import lombok.extern.slf4j.Slf4j;
+import io.micronaut.core.annotation.Introspected;
 import org.example.client.LunClient;
 import org.example.dto.lun.LunResponse;
 import org.example.service.LunService;
@@ -8,8 +8,8 @@ import org.example.service.LunService;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Slf4j
 @Singleton
+@Introspected
 public class LunHttpService implements LunService {
 
   @Inject
