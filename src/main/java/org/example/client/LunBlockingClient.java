@@ -7,7 +7,7 @@ import org.example.dto.lun.LunResponse;
 
 @Introspected
 @Client("${lun.client.host}")
-public interface LunClient {
+public interface LunBlockingClient {
 
   @Get("${lun.client.endpoint}")
   LunResponse receiveData();

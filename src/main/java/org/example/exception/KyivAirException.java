@@ -9,4 +9,8 @@ public class KyivAirException extends RuntimeException {
     super();
   }
 
+  public KyivAirException(Exception exception) {
+    super(exception);
+  }
+
 }

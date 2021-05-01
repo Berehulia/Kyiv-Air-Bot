@@ -16,7 +16,7 @@ import java.util.Formatter;
 
 @Singleton
 @Introspected
-public class LunComposer implements MessageComposer {
+public class LunMessageComposer implements MessageComposer {
 
   public static final String PARAMETER_CAPTION = "caption";
   public static final String PARAMETER_PHOTO = "photo";

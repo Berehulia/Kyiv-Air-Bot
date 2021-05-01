@@ -17,7 +17,7 @@ public class JsonConverter {
     try {
       return mapper.writeValueAsString(object);
     } catch (JsonProcessingException exception) {
-      throw new KyivAirException();
+      throw new KyivAirException(exception);
     }
   }
 

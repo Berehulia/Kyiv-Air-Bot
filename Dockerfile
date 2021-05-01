@@ -6,8 +6,8 @@ RUN yum install -y bash gcc gcc-c++ gzip libc6-dev tar wget zip zlib zlib-devel 
 
 # Installing GraalVM
 
-ENV JDK_VERSION java8
-ENV GRAAL_VERSION 21.0.0.2
+ENV JDK_VERSION java11
+ENV GRAAL_VERSION 21.1.0
 ENV GRAAL_FILENAME graalvm-ce-${JDK_VERSION}-linux-amd64-${GRAAL_VERSION}.tar.gz
 
 RUN wget -nv -P /usr/lib/graalvm https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAAL_VERSION}/${GRAAL_FILENAME}

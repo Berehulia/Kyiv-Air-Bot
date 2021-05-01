@@ -7,7 +7,6 @@ import io.micronaut.http.annotation.Post;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.multipart.MultipartBody;
 import io.micronaut.validation.Validated;
-import io.reactivex.Single;
 import org.example.dto.telegram.TelegramResponse;
 
 import javax.validation.constraints.NotBlank;
@@ -18,7 +17,7 @@ import static io.micronaut.http.MediaType.MULTIPART_FORM_DATA;
 @Validated
 @Introspected
 @Client("${telegram.client.host}")
-public interface TelegramClient {
+public interface TelegramBlockingClient {
 
   @Post(value = "${telegram.client.endpoint}", produces = MULTIPART_FORM_DATA)
   TelegramResponse sendMessage(
